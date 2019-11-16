@@ -15,6 +15,7 @@ public class FBXCustomProperties : AssetPostprocessor
     {
         // Disable imported cameras (otherwise you will have to do it manually)
         DisableCamera(g);
+        MakeStatic(g);
     }
 
     void DisableCamera(GameObject g)
@@ -22,8 +23,15 @@ public class FBXCustomProperties : AssetPostprocessor
         var camera = g.GetComponent<Camera>();
         if (camera != null)
             camera.enabled = false;
-        foreach (Transform c in camera.transform)
+        foreach (Transform c in g.transform)
             DisableCamera(c.gameObject);
+    }
+
+    void MakeStatic(GameObject g)
+    {
+        g.isStatic = true;
+        foreach (Transform c in g.transform)
+            MakeStatic(g);
     }
 
     void OnPostprocessGameObjectWithUserProperties(GameObject go, string[] names, object[] values)

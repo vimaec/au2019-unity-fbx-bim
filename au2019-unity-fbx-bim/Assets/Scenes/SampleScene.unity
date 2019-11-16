@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3e1a33e8dec164db3fece5430608fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BimDataText: {fileID: 0}
+  ObjectName: {fileID: 0}
   BimData: []
 --- !u!114 &282840816
 MonoBehaviour:
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 1622890091}
   - component: {fileID: 1622890090}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ObjectName Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

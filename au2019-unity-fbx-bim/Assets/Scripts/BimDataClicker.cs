@@ -12,7 +12,7 @@ public class BimDataClicker : MonoBehaviour
     private Camera _camera;
     private GameObject _lastSelected;
  
-    public Text BimDataText;
+    public Text ObjectName;
     public string[] BimData = NoStrings;
 
     public static string[] NoStrings = new string[0];
@@ -45,11 +45,13 @@ public class BimDataClicker : MonoBehaviour
         _lastSelected = go;
         if (go == null)
         {
-            BimDataText.text = "nothing selected";
+            if (ObjectName != null)
+                ObjectName.text = "nothing selected";
             BimData = NoStrings;
             return;
         }
-        BimDataText.text = go.name;
+        if (ObjectName != null)
+            ObjectName.text = go.name;
         var bd = go.GetComponent<BimData>();
         if (bd == null)
         {
