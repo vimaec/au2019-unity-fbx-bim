@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /// A component which can be added to a Camera to let the user to click on an imported
 /// Vim game object and output its Bim data to the debug log or to the provided BimDataText component.
 /// </summary>
+[ExecuteAlways]
 public class BimDataClicker : MonoBehaviour
 {   
     private Camera _camera;
